@@ -36,37 +36,43 @@ public class CartController {
 	
 	@PostMapping("/addToCart")
 	public ResponseEntity<Cart> addTocart(@RequestBody ModifyCartRequest request) {
+		log.info("[CartController] [addTocart]: api call start");
 		User user = userRepository.findByUsername(request.getUsername());
 		if(user == null) {
-			log.error("[ADD TO CART] [Fail] for user : " + request.getUsername() +", REASON : User not found" );
+			log.error("[CartController] [addTocart] [Fail] for user : " + request.getUsername() +", REASON : User not found" );
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 		}
 		Optional<Item> item = itemRepository.findById(request.getItemId());
 		if(!item.isPresent()) {
-			log.error("[ADD TO CART] [Fail] for item : " + request.getItemId() +", REASON : Item not found" );
+			log.error("[CartController] [addTocart] [Fail] for item : " + request.getItemId() +", REASON : Item not found" );
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 		}
 		Cart cart = user.getCart();
 		IntStream.range(0, request.getQuantity())
 			.forEach(i -> cart.addItem(item.get()));
 		cartRepository.save(cart);
+		log.info("[CartController] [addTocart] end");
 		return ResponseEntity.ok(cart);
 	}
 	
 	@PostMapping("/removeFromCart")
 	public ResponseEntity<Cart> removeFromcart(@RequestBody ModifyCartRequest request) {
+		log.info("[CartController] [removeFromcart]: api call start");
 		User user = userRepository.findByUsername(request.getUsername());
 		if(user == null) {
+			log.error("[CartController] [removeFromcart] [Fail] for user : " + request.getUsername() +", REASON : User not found" );
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 		}
 		Optional<Item> item = itemRepository.findById(request.getItemId());
 		if(!item.isPresent()) {
+			log.error("[CartController] [removeFromcart] [Fail] for item : " + request.getItemId() +", REASON : Item not found" );
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 		}
 		Cart cart = user.getCart();
 		IntStream.range(0, request.getQuantity())
 			.forEach(i -> cart.removeItem(item.get()));
 		cartRepository.save(cart);
+		log.info("[CartController] [removeFromcart]: api call end");
 		return ResponseEntity.ok(cart);
 	}
 		

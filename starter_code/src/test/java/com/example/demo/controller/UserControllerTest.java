@@ -22,8 +22,7 @@ import static org.junit.Assert.assertNotNull;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-@RunWith(SpringRunner.class)
-@SpringBootTest
+
 public class UserControllerTest {
     private UserController userController;
 
@@ -44,7 +43,7 @@ public class UserControllerTest {
     }
 
     @Test
-    public void createUserHappyPath(){
+    public void createUser_HappyPath(){
         when(encoder.encode("testPassword")).thenReturn("thisIsHashed");
 
         CreateUserRequest request = new CreateUserRequest();
