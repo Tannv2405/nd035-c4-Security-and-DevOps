@@ -129,7 +129,7 @@
 					"id": "0327fb55-2625-4c8b-9fb8-85cac4cfa795",
 					"uid": "0-0327fb55-2625-4c8b-9fb8-85cac4cfa795",
 					"name": "Submit Order",
-					"url": "http://localhost:8080/api/order/submit/user1",
+					"url": "{{baseUrl}}/api/order/submit/user1",
 					"description": null,
 					"data": [],
 					"dataOptions": {
@@ -163,7 +163,7 @@
 					"id": "1b798e92-ae4e-471a-a152-3a46fc068d50",
 					"uid": "0-1b798e92-ae4e-471a-a152-3a46fc068d50",
 					"name": "get All Item",
-					"url": "http://localhost:8080/api/item",
+					"url": "{{baseUrl}}/api/item",
 					"description": null,
 					"data": null,
 					"dataOptions": null,
@@ -192,7 +192,7 @@
 					"id": "271d9a00-9e45-4307-b7d9-4ef17423e1ce",
 					"uid": "0-271d9a00-9e45-4307-b7d9-4ef17423e1ce",
 					"name": "Login",
-					"url": "http://localhost:8080/login",
+					"url": "{{baseUrl}}/login",
 					"description": null,
 					"data": [],
 					"dataOptions": {
@@ -220,7 +220,7 @@
 					"id": "6d864bb8-4f34-43bd-b1fc-a27bb80c613c",
 					"uid": "0-6d864bb8-4f34-43bd-b1fc-a27bb80c613c",
 					"name": "Remove From Cart",
-					"url": "http://localhost:8080/api/cart/removeFromcart",
+					"url": "{{baseUrl}}/api/cart/removeFromcart",
 					"description": null,
 					"data": [],
 					"dataOptions": {
@@ -254,7 +254,7 @@
 					"id": "74ef6c3a-d6ea-4a12-8028-c1f3ac68f2ec",
 					"uid": "0-74ef6c3a-d6ea-4a12-8028-c1f3ac68f2ec",
 					"name": "Create User",
-					"url": "http://localhost:8080/api/user/create",
+					"url": "{{baseUrl}}/api/user/create",
 					"description": null,
 					"data": [],
 					"dataOptions": {
@@ -282,7 +282,7 @@
 					"id": "a75e9344-3f71-4987-bb8e-cc96be86509b",
 					"uid": "0-a75e9344-3f71-4987-bb8e-cc96be86509b",
 					"name": "Get User By Name",
-					"url": "http://localhost:8080/api/user/user1",
+					"url": "{{baseUrl}}/api/user/user1",
 					"description": null,
 					"data": null,
 					"dataOptions": null,
@@ -313,7 +313,7 @@
 					"id": "b27a529a-05ec-42b1-b4e8-aa6080f51c1b",
 					"uid": "0-b27a529a-05ec-42b1-b4e8-aa6080f51c1b",
 					"name": "Get Item By ID",
-					"url": "http://localhost:8080/api/item/1",
+					"url": "{{baseUrl}}/api/item/1",
 					"description": null,
 					"data": null,
 					"dataOptions": null,
@@ -344,7 +344,7 @@
 					"id": "d6462034-d35a-4e30-820b-6c3dac067722",
 					"uid": "0-d6462034-d35a-4e30-820b-6c3dac067722",
 					"name": "Get Items By Name",
-					"url": "http://localhost:8080/api/item/name/Square Widget",
+					"url": "{{baseUrl}}/api/item/name/Square Widget",
 					"description": null,
 					"data": null,
 					"dataOptions": null,
@@ -375,7 +375,7 @@
 					"id": "deee3fb5-f4d6-46db-8127-9f7e4f44e49a",
 					"uid": "0-deee3fb5-f4d6-46db-8127-9f7e4f44e49a",
 					"name": "Get User By ID",
-					"url": "http://localhost:8080/api/user/id/1",
+					"url": "{{baseUrl}}/api/user/id/1",
 					"description": null,
 					"data": null,
 					"dataOptions": null,
@@ -404,7 +404,7 @@
 					"id": "f99b30c9-4463-4165-b280-2fc61e118c1d",
 					"uid": "0-f99b30c9-4463-4165-b280-2fc61e118c1d",
 					"name": "Get User Order History",
-					"url": "http://localhost:8080/api/order/history/user1",
+					"url": "{{baseUrl}}/api/order/history/user1",
 					"description": null,
 					"data": null,
 					"dataOptions": null,
@@ -433,7 +433,7 @@
 					"id": "fe1b6457-df5a-4fde-ad27-ecfdbbc84ca3",
 					"uid": "0-fe1b6457-df5a-4fde-ad27-ecfdbbc84ca3",
 					"name": "Add To Cart",
-					"url": "http://localhost:8080/api/cart/addToCart",
+					"url": "{{baseUrl}}/api/cart/addToCart",
 					"description": null,
 					"data": [],
 					"dataOptions": {
@@ -476,8 +476,19 @@
 					"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyMSIsImV4cCI6MTY2OTI3MDcwM30.vFJu9m_qaASuzjpfIpeYJrK0j6F1SfvrnD0GWqF3dFJTOIbbfXyTCUN5rE4zmAGMJxZrGMXyKZBTC-90OTo0aA",
 					"type": "default",
 					"enabled": true
+				},
+				{
+					"key": "baseUrl",
+					"value": "http://localhost:8080",
+					"type": "default",
+					"enabled": true
 				}
 			]
+		},
+		{
+			"id": "9ef43c0a-06a4-4b63-b268-92c5a756a007",
+			"name": "My Workspace - globals",
+			"values": []
 		}
 	],
 	"headerPresets": [],

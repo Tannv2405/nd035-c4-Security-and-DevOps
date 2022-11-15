@@ -61,6 +61,15 @@ public class JWTAuthenticationFilter  extends UsernamePasswordAuthenticationFilt
                 .withExpiresAt(new Date(System.currentTimeMillis() + SecurityConstants.EXPIRATION_TIME))
                 .sign(HMAC512(SecurityConstants.SECRET.getBytes()));
         res.addHeader(SecurityConstants.HEADER_STRING, SecurityConstants.TOKEN_PREFIX + token);
-        log.info("User {} authenticated, JWT issued", ((User) auth.getPrincipal()).getUsername());
+        log.info("User {} authenticated, JWT issued", ((org.springframework.security.core.userdetails.User) auth.getPrincipal()).getUsername());
+    }
+
+    @Override
+    protected void unsuccessfulAuthentication(javax.servlet.http.HttpServletRequest request,
+                                              javax.servlet.http.HttpServletResponse response,
+                                              AuthenticationException failed)
+            throws IOException, javax.servlet.ServletException {
+        log.error("Authentication attempt failed. {}.", failed.getMessage());
+        super.unsuccessfulAuthentication(request, response, failed);
     }
 }
